@@ -33,8 +33,7 @@ export class App extends Component{
       if (total === 0) {
         return 0;
       }
-      return ((good / total) * 100);
-        
+      return ((good / total) * 100);        
   };
 
   render() {      
