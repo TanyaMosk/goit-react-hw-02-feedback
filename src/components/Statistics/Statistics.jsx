@@ -1,19 +1,23 @@
 import PropTypes from 'prop-types'; 
+import { Span, StatList, StatTitle } from './Statistics.styled';
+import Notification from 'components/Notification';
 
 export const Statistics = ({ good, neutral, bad, total, positivePercentage, title }) => {
    
     return (
-        <div>
-        <h2>{title}</h2>       
-            
-        <span>Good:{good}</span>
-        <span>Neutral:{neutral}</span>
-        <span>Bad:{bad}</span>
-        <span>Total:{total}</span>
-        <span>Positive feedback:{positivePercentage.toFixed(0)}%</span>
-    </div>
-    )
-}
+    <StatList>
+        <StatTitle>{title}</StatTitle>       
+        {total === 0 ? 
+        <Notification message="There is no feedback" /> :
+        <>
+        <Span>Good: {good}</Span>
+        <Span>Neutral: {neutral}</Span>
+        <Span>Bad: {bad}</Span>
+        <Span>Total: {total}</Span>
+        <Span>Positive feedback: {positivePercentage.toFixed(0)}%</Span>
+        </>}        
+    </StatList>
+)}
 
 Statistics.propTypes = {
     good: PropTypes.number.isRequired,

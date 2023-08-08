@@ -3,7 +3,7 @@ import { GlobalStyle } from "./GlobalStyle";
 import  Section  from "./Section";
 import  Statistics  from "./Statistics";
 import  FeedbackOptions  from "./FeedbackOptions";
-import  Notification  from "./Notification";
+// import  Notification  from "./Notification";
 
 
 export class App extends Component{
@@ -46,17 +46,13 @@ export class App extends Component{
           options={options}
           onLeaveFeedback={this.onLeaveFeedback}         
           />
-          
-          {this.countTotalFeedback() === 0 ? 
-          <Notification message="There is no feedback" /> :
-            (<Statistics title="Statistic"               
+          <Statistics title="Statistic"               
           good={this.state.good}
           neutral={this.state.neutral}
           bad={this.state.bad}
           total={this.countTotalFeedback() }
           positivePercentage={this.countPositiveFeedbackPercentage()}     
-          />)
-          }          
+          />             
           </Section>               
         <GlobalStyle/>
       </div>
