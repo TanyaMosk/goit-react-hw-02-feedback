@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Span, StatList, StatTitle } from './Statistics.styled';
 import Notification from 'components/Notification';
 
-export const Statistics = ({ good, neutral, bad, total, positivePercentage, title }) => {
+const Statistics = ({ good, neutral, bad, total, positivePercentage, title }) => {
    
     return (
     <StatList>

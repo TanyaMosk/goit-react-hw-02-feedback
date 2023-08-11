@@ -1,6 +1,6 @@
 import { Button,ListBtn } from "./FeedbackOptions.styled";
 
-export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
+const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
     <ListBtn>
       {options.map(option => (
